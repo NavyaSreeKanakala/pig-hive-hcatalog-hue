@@ -1,6 +1,6 @@
 # pig-hive-hcatalog-hue
 
-Analysis on Telco dataset
+Clean Telco dataset using Pig & perform analysis using Hive
 
 1) Given an unclean, junk characters included telco dataset, aim to clean this dataset  and store in Hive to perform analysis To store cleaned dataset into hive, create a table telco in database telco_upx before running the pig script  
 
