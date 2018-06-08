@@ -23,17 +23,17 @@ $pig -useHCatalog clean_and_store_in_hive.pig
 
 5) Perform below analysis in Hue so as to visualize the results 
 
-1.  How tenure of customers is effecting churn rate  
+i.  How tenure of customers is effecting churn rate  
 select count(churn),tenure from telco_upx.telco where churn == 'Yes' group by tenure; 
-2.  Analyze how online security provided by this company is effecting its churn rate 
+ii. Analyze how online security provided by this company is effecting its churn rate 
 select count(churn),onlinesecurity from telco_upx.telco where churn == 'Yes' group by onlinesecurity; 
-3.  Analyze the effect of senior citizens on churn rate 
+iii. Analyze the effect of senior citizens on churn rate 
 select count(churn),seniorcitizen from telco_upx.telco where churn == 'Yes' group by seniorcitizen; 
-4.  Which gender is more likely to effect churn rate 
+iv. Which gender is more likely to effect churn rate 
 select count(churn),gender from telco_upx.telco where churn == 'Yes' group by gender; 
-5.  How many customers cancelled services offered by this company in the last month 
+v. How many customers cancelled services offered by this company in the last month 
 select count(churn),churn from telco_upx.telco group by churn; 
-6. Company waives off 10% for 1 year tenure customers, 20% for 2 year tenure customers and so on… 60% for 6 year tenure customers. Calculate the new rates to be paid by these customers 
+vi. Company waives off 10% for 1 year tenure customers, 20% for 2 year tenure customers and so on… 60% for 6 year tenure customers. Calculate the new rates to be paid by these customers 
 select round(tenure/12) as year,monthlycharges, 
 case when round(tenure/12) = 1 then 0.9*monthlycharges 
   when round(tenure/12) = 2 then 0.8*monthlycharges 
@@ -43,19 +43,19 @@ case when round(tenure/12) = 1 then 0.9*monthlycharges
   when round(tenure/12) >= 6 then 0.4*monthlycharges 
   else monthlycharges end as amount_to_be_paid  
 from telco_upx.telco; 
-7.  Statistics of number of customers according to their tenure 
+vii. Statistics of number of customers according to their tenure 
 select round(tenure/12) as year,count(round(tenure/12)) from telco_upx.telco group by round(tenure/12); 
-8.  Analyse how many customers are into paperless billing 
+viii. Analyse how many customers are into paperless billing 
 select paperlessbilling,count(paperlessbilling) from telco_upx.telco group by paperlessbilling 
-9.  Analyze the type of internet service most preferred by senior citizens 
+ix. Analyze the type of internet service most preferred by senior citizens 
 select COUNT(internetservice),internetservice from telco_upx.telco where seniorcitizen = 1 group by internetservice 
-10a. Which gender is more likely to watch movies 
-10b. Which gender is more likely to watch tv 
+xa. Which gender is more likely to watch movies 
+xb. Which gender is more likely to watch tv 
 select gender,count(streamingtv) from telco_upx.telco group by gender 
 select gender,count(streamingmovies) from telco_upx.telco group by gender  
-11.  Analyze the preferred payment method of customers 
+xi. Analyze the preferred payment method of customers 
 select count(paymentmethod),paymentmethod from telco_upx.telco group by paymentmethod 
-12.  Analyze the most preferred payment method gender-wise 
+xii. Analyze the most preferred payment method gender-wise 
 select paymentmethod,count(paymentmethod) from telco_upx.telco group by gender 
-13.  Analyze the number of customers who are likely to make use of technical support provided by company 
+xiii. Analyze the number of customers who are likely to make use of technical support provided by company 
 select count(techsupport) from telco where techsupport == 'Yes'
