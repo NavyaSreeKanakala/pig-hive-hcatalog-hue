@@ -72,6 +72,16 @@ select paymentmethod,count(paymentmethod) from telco_upx.telco group by gender
 xiii. Analyze the number of customers who are likely to make use of technical support provided by company 
 select count(techsupport) from telco where techsupport == 'Yes'
 
+## Screenshots
+
+1. select count(churn),tenure from telco_upx.telco where churn == 'Yes' group by tenure
+   
+ ![alt] https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/output1.png
+ 
+2. select count(churn),onlinesecurity from telco_upx.telco where churn == 'Yes' group by onlinesecurity
+
+![alt] https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/output2.png
+
 ## Future Possibilities
 As data is stored in Hive tables and Hive has SQL-like structure, we can explore it in 2 ways:
   1. Pulling data from Hive tables to Spark SQL using HiveContext
