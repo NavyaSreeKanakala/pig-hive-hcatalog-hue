@@ -72,3 +72,9 @@ select paymentmethod,count(paymentmethod) from telco_upx.telco group by gender
 
 xiii. Analyze the number of customers who are likely to make use of technical support provided by company 
 select count(techsupport) from telco where techsupport == 'Yes'
+
+Future Possibilities
+As data is stored in Hive tables and Hive has SQL-like structure, we can explore it in 2 ways:
+  1. Pulling data from Hive tables to Spark SQL using HiveContext
+  2. Storing data of Hive tables to HDFS and then read stored HDFS data into Zeppelin using Spark 
+
