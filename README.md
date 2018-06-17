@@ -27,7 +27,7 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
    9.\\s]+)',''),REPLACE($17,'([^a-zA-Z0-9-.\\s]+)',''),REPLACE($18,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($19,'([^a-zA-Z0-
    9-.\\s]+)',''),REPLACE($20,'([^a-zA-Z0-9.\\s]+)',''); 
 
-   cleaned_telco1 = foreach cleaned_telco generate $0 as customerid,$1 as gender,(int)$2 as seniorcitizen,$3 as partner,$4 as  
+   cleaned_telco1 = foreach cleaned_telco generate $0 as customerid,$1 as gender,(int)$2 as seniorcitizen,$3 as partner,$4 as   
    dependents,(int)$5 as tenure,$6 as phoneservice,$7 as multiplelines,$8 as internetservice, $9 as onlinesecurity,$10 as onlinebackup,    $11 as deviceprotection, $12 as techsupport, $13 as streamingtv, $14 as streamingmovies, $15 as contract, $16 as paperlessbilling,   
    $17 as paymentmethod, (float)$18 as monthlycharges, (float)$19 as totalcharges, $20 as churn; 
 
@@ -51,15 +51,15 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
 
    iii. Analyze the effect of senior citizens on churn rate 
         
-        select count(churn),seniorcitizen from telco_upx.telco where churn == 'Yes' group by seniorcitizen 
+       select count(churn),seniorcitizen from telco_upx.telco where churn == 'Yes' group by seniorcitizen 
 
    iv. Which gender is more likely to effect churn rate 
        
        select count(churn),gender from telco_upx.telco where churn == 'Yes' group by gender 
 
-   v. How many customers cancelled services offered by this company in the last month 
+   v.  How many customers cancelled services offered by this company in the last month 
       
-      select count(churn),churn from telco_upx.telco group by churn
+       select count(churn),churn from telco_upx.telco group by churn
 
    vi. Company waives off 10% for 1 year tenure customers, 20% for 2 year tenure customers and so on… 60% for 6 year tenure customers.          Calculate the new rates to be paid by these customers 
        
@@ -75,11 +75,11 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
 
    vii. Statistics of number of customers according to their tenure 
         
-        select round(tenure/12) as year,count(round(tenure/12)) from telco_upx.telco group by round(tenure/12) 
+       select round(tenure/12) as year,count(round(tenure/12)) from telco_upx.telco group by round(tenure/12) 
 
    viii. Analyse how many customers are into paperless billing 
          
-         select paperlessbilling,count(paperlessbilling) from telco_upx.telco group by paperlessbilling 
+       select paperlessbilling,count(paperlessbilling) from telco_upx.telco group by paperlessbilling 
 
    ix. Analyze the type of internet service most preferred by senior citizens 
        
@@ -99,11 +99,11 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
 
    xii. Analyze the most preferred payment method gender-wise 
         
-        select paymentmethod,count(paymentmethod) from telco_upx.telco group by gender
+       select paymentmethod,count(paymentmethod) from telco_upx.telco group by gender
 
    xiii. Analyze the number of customers who are likely to make use of technical support provided by company 
          
-         select count(techsupport) from telco where techsupport == 'Yes'
+       select count(techsupport) from telco where techsupport == 'Yes'
 
 ## Screenshots
 
