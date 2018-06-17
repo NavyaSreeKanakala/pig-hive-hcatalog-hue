@@ -2,7 +2,28 @@
 ## Clean Telco dataset using Pig & perform analysis using Hive
 
 ## Objective
+
 Given an unclean telco dataset and our aim is to clean this dataset and store it in Hive to perform analysis
+
+## Data description
+
+1. Dataset is of Customer Churn data 
+
+2. Consists information of CustomerID, gender, tenure, Senior citizens, contract
+
+   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output6.png)
+   
+## Tools & Technologies used
+
+Best suited technologies:
+
+1. Apache Pig
+
+2. Apache Hive
+
+3. HCatalog
+
+4. Cloudera HUE
 
 ## Commands
 
