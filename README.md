@@ -8,10 +8,10 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
 
 1) To store cleaned dataset into hive, create a table telco in database telco_upx before running the pig script  
 
-   create table telco(customerID String,gender String,SeniorCitizen Int,Partner String,Dependents String,tenure Int,PhoneService       
-   String,MultipleLines String,InternetService String,OnlineSecurity String,OnlineBackup String,DeviceProtection String,TechSupport  
-   String,StreamingTV String,StreamingMovies String,Contract String,PaperlessBilling String,PaymentMethod String,MonthlyCharges 
-   Float,TotalCharges Float,Churn String) row format delimited fields terminated by ',' tblproperties ("skip.header.line.count"="1");  
+   create table telco(customerID String,gender String,SeniorCitizen Int,Partner String,Dependents String,tenure Int,
+   PhoneService String,MultipleLines String,InternetService String,OnlineSecurity String,OnlineBackup String,DeviceProtection String,
+   TechSupportvString,StreamingTV String,StreamingMovies String,Contract String,PaperlessBilling String,PaymentMethod String,
+   MonthlyCharges Float,TotalCharges Float,Churn String) row format delimited fields terminated by ',' tblproperties ("skip.header.line.count"="1");  
 
 2) create below pig script to clean and store into hive
 
