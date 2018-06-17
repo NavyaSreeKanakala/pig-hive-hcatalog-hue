@@ -18,7 +18,9 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
    $vi clean_and_store_in_hive.pig 
 
    junk_telco = LOAD '/user/ec2-user/telco_churn_esc.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',', 'NO_MULTILINE',   
-   'NOCHANGE', 'SKIP_INPUT_HEADER'); cleaned_telco = FOREACH junk_telco GENERATE REPLACE($0,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($1,'([^a-
+   'NOCHANGE', 'SKIP_INPUT_HEADER'); 
+   
+   cleaned_telco = FOREACH junk_telco GENERATE REPLACE($0,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($1,'([^a-
    zA-Z0-9-.\\s]+)',''),REPLACE($2,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($3,'([^a-zA-Z0-9-.\\s]+)',''),REPLACE($4,'([^a-zA-Z0-
    9.\\s]+)',''),REPLACE($5,'([^a-zA-Z0-9-.\\s]+)',''),REPLACE($6,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($7,'([^a-zA-Z0-
    9-.\\s]+)',''),REPLACE($8,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($9,'([^a-zA-Z0-9-.\\s]+)',''),REPLACE($10,'([^a-zA-Z0-
