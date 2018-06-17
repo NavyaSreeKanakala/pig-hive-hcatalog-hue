@@ -11,7 +11,8 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
    create table telco(customerID String,gender String,SeniorCitizen Int,Partner String,Dependents String,tenure Int,
    PhoneService String,MultipleLines String,InternetService String,OnlineSecurity String,OnlineBackup String,DeviceProtection String,
    TechSupportvString,StreamingTV String,StreamingMovies String,Contract String,PaperlessBilling String,PaymentMethod String,
-   MonthlyCharges Float,TotalCharges Float,Churn String) row format delimited fields terminated by ',' tblproperties ("skip.header.line.count"="1");  
+   MonthlyCharges Float,TotalCharges Float,Churn String) row format delimited fields terminated by ',' tblproperties 
+   ("skip.header.line.count"="1");  
 
 2) create below pig script to clean and store into hive
 
@@ -29,9 +30,10 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
    9.\\s]+)',''),REPLACE($17,'([^a-zA-Z0-9-.\\s]+)',''),REPLACE($18,'([^a-zA-Z0-9.\\s]+)',''),REPLACE($19,'([^a-zA-Z0-
    9-.\\s]+)',''),REPLACE($20,'([^a-zA-Z0-9.\\s]+)',''); 
 
-   cleaned_telco1 = foreach cleaned_telco generate $0 as customerid,$1 as gender,(int)$2 as seniorcitizen,$3 as partner,$4 as   
-   dependents,(int)$5 as tenure,$6 as phoneservice,$7 as multiplelines,$8 as internetservice, $9 as onlinesecurity,$10 as onlinebackup,    $11 as deviceprotection, $12 as techsupport, $13 as streamingtv, $14 as streamingmovies, $15 as contract, $16 as paperlessbilling,   
-   $17 as paymentmethod, (float)$18 as monthlycharges, (float)$19 as totalcharges, $20 as churn; 
+   cleaned_telco1 = foreach cleaned_telco generate $0 as customerid, $1 as gender, (int)$2 as seniorcitizen, $3 as partner,
+   $4 as dependents, (int)$5 as tenure, $6 as phoneservice, $7 as multiplelines, $8 as internetservice, $9 as onlinesecurity,
+   $10 as onlinebackup, $11 as deviceprotection, $12 as techsupport, $13 as streamingtv, $14 as streamingmovies, $15 as contract, 
+   $16 as paperlessbilling, $17 as paymentmethod, (float)$18 as monthlycharges, (float)$19 as totalcharges, $20 as churn; 
 
    STORE cleaned_telco1 INTO 'telco_upx.telco' USING org.apache.hive.hcatalog.pig.HCatStorer();
 
