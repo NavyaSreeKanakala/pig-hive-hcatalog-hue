@@ -14,7 +14,7 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
    MonthlyCharges Float,TotalCharges Float,Churn String) row format delimited fields terminated by ',' tblproperties 
    ("skip.header.line.count"="1");  
 
-2) create below pig script to clean and store into hive
+2) Create below pig script to clean and store into hive
 
    $vi clean_and_store_in_hive.pig 
 
