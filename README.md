@@ -11,7 +11,7 @@ Given an unclean telco dataset and our aim is to clean this dataset and store it
 
 2. Consists information of CustomerID, gender, tenure, Senior citizens, contract
 
-   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output6.png)
+   ![alt text](images/output6.png)
    
 ## Tools & Technologies used
 
@@ -134,23 +134,23 @@ Best suited technologies:
 
 1. select count(churn),tenure from telco_upx.telco where churn == 'Yes' group by tenure
    
-   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output1.png)
+   ![alt text](images/output1.png)
  
 2. select count(churn),onlinesecurity from telco_upx.telco where churn == 'Yes' group by onlinesecurity
 
-   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output2.png)
+   ![alt text](images/output2.png)
    
 3. select count(churn),seniorcitizen from telco_upx.telco where churn == 'Yes' group by seniorcitizen;
 
-   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output3.png)
+   ![alt text](images/output3.png)
    
 4. select count(churn),gender from telco_upx.telco where churn == 'Yes' group by gender;
 
-   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output4.png)
+   ![alt text](images/output4.png)
    
 5. select count(churn),churn from telco_upx.telco group by churn;
 
-   ![alt text](https://github.com/NavyaSreeKanakala/pig-hive-hcatalog-hue/blob/master/output5.png)
+   ![alt text](images/output5.png)
    
 
 ## Future Possibilities
