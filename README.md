@@ -56,7 +56,7 @@ Best suited technologies:
    $10 as onlinebackup, $11 as deviceprotection, $12 as techsupport, $13 as streamingtv, $14 as streamingmovies, $15 as contract, 
    $16 as paperlessbilling, $17 as paymentmethod, (float)$18 as monthlycharges, (float)$19 as totalcharges, $20 as churn; 
 
-   STORE cleaned_telco1 INTO 'telco_upx.telco' USING org.apache.hive.hcatalog.pig.HCatStorer();
+   STORE cleaned_telco1 INTO 'telco_project.telco' USING org.apache.hive.hcatalog.pig.HCatStorer();
 
 3) Save and quit from vi editor
 
