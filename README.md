@@ -152,6 +152,8 @@ Best suited technologies:
 
    ![alt text](images/output5.png)
    
+[Click here!](screenshots/Screenshots of Hue.pdf) for more output screenshots.
+   
 
 ## Future Possibilities
 
